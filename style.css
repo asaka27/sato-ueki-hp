@@ -676,34 +676,42 @@ footer {
     .hp-height-visual-container {
         height: 410px; 
         padding: 0 10px 45px 75px;
+        position: relative; /* 👇 子要素（文字）の位置を正しく制御するための基準を設定 */
     }
     .hp-house-graphic {
         display: none;
     }
-    /* 👇 ここから重なり防止の調整を加えました */
+    
+    /* 👇 イラストより前に文字が確実に来るように設定 */
     .hp-height-marker {
-        width: 100% !important; /* 横幅いっぱいに広げて位置を安定 */
+        width: 100% !important;
+        position: absolute; /* 親要素に対して自由な位置に配置 */
+        left: 0;
+        z-index: 10; /* イラスト（z-index: 1）よりも前に出す */
     }
     .hp-marker-label {
         font-size: 11px;
-        background-color: rgba(255, 255, 255, 0.85); /* 白背景をほんのり敷いて文字を読みやすく */
+        background-color: rgba(255, 255, 255, 0.9); /* 白背景を敷いて文字の視認性をキープ */
+        color: #333;
         padding: 2px 6px;
         border-radius: 3px;
-        position: relative;
-        left: -45px; /* 【重要】文字を左側（元のお家があった側）にグッと寄せて、右の木との間に隙間を作ります */
-        z-index: 10; /* 万が一、重なってもイラストより手前に表示 */
+        border: 1px solid #ccc;
+        
+        position: absolute;
+        left: 15px; /* 左端から15pxの位置にしっかり固定 */
     }
     .hp-tree-column {
-        margin-left: 8px; /* 木と木の隙間をほんの少し詰めて、文字のためのスペースを確保 */
+        position: relative;
+        z-index: 1; /* 木のイラストは奥側に配置 */
     }
     /* 👆 ここまで */
+    
     .hp-tree-info {
         font-size: 12px;
     }
     .hp-tree-info small {
         font-size: 10px;
     }
-
     /* スマホ固定電話ボタン */
     .mobile-tel-bar {
         display: flex;
