@@ -22,9 +22,9 @@ body {
     background-color: var(--bg-light);
     scroll-behavior: smooth;
 }
+
 p {
-    font-size: 18px;   /* 全てのpタグ文字の大きさ */
-    line-height: 1.8;  /* 文字が大きいので行間も広めに確保 */
+    font-size: 18px; /* 全てのpタグ文字の大きさ */
     margin-bottom: 20px; /* 段落ごとの間隔 */
 }
 
@@ -34,18 +34,12 @@ p {
     padding: 0 20px; 
 }
 
-@media (max-width: 768px) {
-    p {
-        font-size: 16px; /* スマホでは少し小さくして画面内に収まりやすくする*/
-	line-height: 1.6; /* スマホでは行間を少し詰める */
-    }
-}
-
 /* 共通セクション */
 section { 
     padding: 80px 0; 
     border-bottom: 1px solid #f0f0f0; 
 }
+
 .section-title {
     text-align: center; 
     font-size: 2.2rem; 
@@ -53,6 +47,7 @@ section {
     margin-bottom: 50px; 
     letter-spacing: 0.2em;
 }
+
 .bg-soft { 
     background-color: var(--soft-green); 
 }
@@ -80,6 +75,7 @@ header h1 {
     align-items: center; 
     margin: 0; 
 }
+
 header h1 img {
     height: 80px; 
     width: auto;
@@ -94,6 +90,7 @@ nav ul {
     margin: 0; 
     padding: 0; 
 }
+
 nav a { 
     text-decoration: none; 
     color: var(--text-dark); 
@@ -101,6 +98,7 @@ nav a {
     font-weight: bold; 
     transition: 0.3s; 
 }
+
 nav a:hover { 
     color: var(--main-green); 
 }
@@ -116,6 +114,7 @@ nav a:hover {
     align-items: center; 
     justify-content: center;
 }
+
 .slider { 
     position: absolute; 
     width: 100%; 
@@ -124,6 +123,7 @@ nav a:hover {
     left: 0; 
     z-index: -1; 
 }
+
 .slide {
     position: absolute; 
     width: 100%; 
@@ -153,6 +153,7 @@ nav a:hover {
     z-index: 1; 
     padding: 0 20px; 
 }
+
 .hero-content h2 { 
     font-size: clamp(2.0rem, 5vw, 3.0rem); 
     margin-bottom: 15px; 
@@ -167,6 +168,7 @@ nav a:hover {
     border-radius: 2px; 
     transition: 0.3s; 
 }
+
 .btn:hover { 
     opacity: 0.9; 
     transform: translateY(-2px); 
@@ -196,18 +198,18 @@ nav a:hover {
 }
 
 .message-text p {
-    margin-bottom: 30px;　/* 間隔 */
+    margin-bottom: 30px; /* 間隔 */
     text-align: justify; /* 両端揃えで整列 */
 }
 
 .highlight-text {
     text-align: center !important; 
-    font-size: 1.4rem;             
-    font-weight: bold;             
-    color: var(--main-green);      
-    margin: 35px 0 !important;     
+    font-size: 1.4rem;              
+    font-weight: bold;              
+    color: var(--main-green);       
+    margin: 35px 0 !important;      
     letter-spacing: 0.05em;
-    display: block;                
+    display: block;                 
 }
 
 .trouble-box {
@@ -254,8 +256,6 @@ nav a:hover {
 
 .sp-only { display: none; }
 
-
-
 /* ==========================================================================
    5. 事業内容セクション
    ========================================================================== */
@@ -264,6 +264,7 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px; 
 }
+
 .service-card { 
     background: white; 
     padding: 30px; 
@@ -271,22 +272,26 @@ nav a:hover {
     border: 1px solid #eee; 
     border-radius: 8px; 
 }
+
 .service-link {
     text-decoration: none;
     color: inherit;
     display: block; 
 }
+
 .service-link:hover .service-card {
     transform: translateY(-3px);
     border-color: var(--main-green);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
+
 .service-card .icon { 
     font-size: 3rem; 
     display: block; 
     margin-bottom: 15px; 
 }
+
 .service-card h3 { 
     font-size: 1.6rem; /* 見出しの文字を大きく設定 */
     margin-bottom: 15px; 
@@ -298,7 +303,8 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   6. 施工事例   ========================================================================== */
+   6. 施工事例
+   ========================================================================== */
 .comparison-grid {
     display: flex;
     flex-direction: column;
@@ -321,12 +327,14 @@ nav a:hover {
     text-align: center; 
     margin-bottom: 25px; 
 }
+
 .work-info h3 { 
     font-size: 24px; /* パソコンで大きく見せる */
     color: var(--main-green); 
     margin-bottom: 15px; 
     font-weight: bold;
 }
+
 .work-desc {
     font-size: 18px; /* 文字を大きく */
     line-height: 1.6;
@@ -338,10 +346,12 @@ nav a:hover {
     gap: 20px; 
     justify-content: center; 
 }
+
 .photo-container { 
     position: relative; 
     flex: 1; 
 }
+
 .work-photo { 
     width: 100%; 
     height: auto; /* 高さを固定せず、写真本来の比率で大きく見せる */
@@ -349,10 +359,11 @@ nav a:hover {
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
+
 .label-tag { 
     position: absolute; 
-    top: 10px; 
-    left: 10px; 
+    bottom: 10px; 
+    left: 10px;
     background: rgba(0,0,0,0.8); /* より濃くして文字を読みやすく */
     color: #fff; 
     padding: 6px 15px; 
@@ -362,50 +373,6 @@ nav a:hover {
     z-index: 5; 
 }
 
-/* 実績カウンター */
-
-.result-content h4 {
-    font-size: 1.5rem;    /* 文字を大きく設定 */
-    margin-bottom: 5px;   /* 数字との間隔を少し空ける */
-    color: var(--text-dark); /* タイトルの色を濃くして視認性を高める */
-}
-.results-grid { 
-    display: flex; 
-    justify-content: center; 
-    gap: 40px; 
-    margin-bottom: 20px; 
-}
-.result-item { 
-    background: #fff; 
-    padding: 30px; 
-    border-radius: 10px; 
-    display: flex; 
-    align-items: center; /* アイコンと文字が縦中央並び */
-    gap: 25px;           /* アイコンと文字の間隔を少し広く */
-    flex: 1; 
-    max-width: 450px;    /* カードの横幅を少し広げた */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 少し影をつけて高級感 */
-}
-
-/* アイコンを大きく */
-.result-icon {
-    font-size: 3.5rem;   /* 数字と同じ大きなサイズに設定 */
-    line-height: 1;      /* 行間を詰めて余計な余白を消す */
-    display: block;      /* 崩れ防止のためにブロック要素化 */
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* アイコンに軽い影をつけ、立体感と視認性を確保 */
-}
-
-.result-number { 
-    font-size: 3.5rem;   /* アイコンと同じ大きさに */
-    font-weight: bold; 
-    color: var(--main-green); 
-}
-.result-note {
-    text-align: center;   /* 文字を中央揃え */
-    margin-top: 30px;     /* 上のコンテンツとの間隔を空ける */
-    font-size: 1.1rem;    /* 少し文字を大きくして読みやすく */
-    color: #555;          /* 少しグレーがかった色にして落ち着かせる */
-}
 /* ==========================================================================
    7. 料金表・高さガイド
    ========================================================================== */
@@ -417,6 +384,7 @@ nav a:hover {
     border: 1px solid #eee; 
     border-radius: 12px;
 }
+
 .guide-tag {
     display: inline-block; 
     background: var(--main-green); 
@@ -434,6 +402,7 @@ nav a:hover {
     max-width: 1000px;
     width: 100%;
 }
+
 .hp-height-visual-container {
     display: flex;
     align-items: flex-end;
@@ -456,6 +425,7 @@ nav a:hover {
     z-index: 1;
     margin-bottom: 20px; 
 }
+
 .hp-house-roof {
     position: absolute;
     top: -80px; 
@@ -465,6 +435,7 @@ nav a:hover {
     background: #334155;
     clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
 }
+
 .hp-house-window {
     position: absolute;
     width: 50px;
@@ -472,6 +443,7 @@ nav a:hover {
     background: #e2e8f0;
     border: 2px solid #475569;
 }
+
 .hp-window-1 { top: 60px; left: 102px; }
 .hp-window-2 { top: 220px; left: 40px; }
 .hp-window-3 { top: 220px; right: 40px; }
@@ -483,6 +455,7 @@ nav a:hover {
     border-top: 2px dashed #b4c6b2;
     z-index: 0;
 }
+
 .hp-marker-label {
     position: absolute;
     left: 10px;
@@ -504,14 +477,17 @@ nav a:hover {
     z-index: 2;
     margin-bottom: 20px; 
 }
+
 .hp-tree-shape {
     border-radius: 50% 50% 15% 15%;
     margin-bottom: -5px;
 }
+
 .hp-tree-trunk {
     background-color: #78350f;
     width: 10px;
 }
+
 .hp-tree-info {
     text-align: center;
     position: absolute;
@@ -525,12 +501,14 @@ nav a:hover {
     line-height: 1.3;
     white-space: nowrap;
 }
+
 .hp-tree-info small {
     font-size: 1.0rem; /* 文字拡大 */
     color: #475569;
     font-weight: normal;
     display: block;
 }
+
 .hp-guide-note {
     text-align: center;
     margin-top: 25px;
@@ -543,24 +521,31 @@ nav a:hover {
 .table-container { 
     overflow-x: auto; 
 }
+
 table { 
     width: 100%; 
     border-collapse: collapse; 
     margin-top: 20px; 
     background: white; 
     min-width: 500px; 
-　　font-size: 1.2rem; /* 本文と文字の大きさ統一 */
+    font-size: 1.2rem; /* 本文と文字の大きさ統一 */
 }
+
+.table-container table {
+    table-layout: fixed;
+}
+
 th, td { 
     border: 1px solid #eee; 
     padding: 20px; 
     text-align: left; 
 }
+
 th { 
     background: var(--soft-green); 
     color: var(--main-green); 
-    width: 30%; 
 }
+
 .table-sub-title {
     font-size: 1.8rem;/* 他の見出しと統一 */
     color: var(--main-green);
@@ -569,21 +554,20 @@ th {
     padding-bottom: 8px;
     display: inline-block;
 }
+
 .work-name {
-　　font-size: 1.3rem; /* 項目名を強調 */
+    font-size: 1.3rem; /* 項目名を強調 */
     font-weight: bold;
     background-color: var(--bg-light); 
     color: var(--text-dark);
 }
+
 .work-name small {
     font-size: 1.0rem;/* 文字拡大 */
     color: #666;
     font-weight: normal;
     display: block;
     margin-top: 4px;
-}
-table td:last-child {
-    font-weight: bold;
 }
 
 /* ==========================================================================
@@ -594,13 +578,15 @@ table td:last-child {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 15px; 
 }
+
 .flow-step { 
     background: var(--soft-green); 
     padding: 30px; 
     text-align: center; 
     border-radius: 5px; 
-　　font-size: 1.2rem; /* 文字拡大 */
+    font-size: 1.2rem; /* 文字拡大 */
 }
+
 .step-num { 
     font-weight: bold; 
     color: var(--main-green); 
@@ -621,6 +607,11 @@ footer {
    9. スマホ・タブレット用 レスポンシブ調整（一括集約）
    ========================================================================== */
 @media (max-width: 768px) {
+    /* 共通タグ */
+    p {
+        font-size: 16px; /* スマホでは少し小さくして画面内に収まりやすくする */
+    }
+
     /* ヘッダー */
     header .header-flex {
         flex-direction: column; 
@@ -681,15 +672,7 @@ footer {
         font-size: 16px;
     }
 
-    /* 実績・料金ガイド */
-    .results-grid { 
-        flex-direction: column; 
-        align-items: center; 
-        gap: 20px; 
-    }
-    .result-item { 
-        width: 100%; 
-    }
+/* 実績・料金ガイド（不要な記述を削除し最適化） */
     .hp-height-visual-container {
         height: 410px; 
         padding: 0 10px 45px 75px;
@@ -697,10 +680,23 @@ footer {
     .hp-house-graphic {
         display: none;
     }
-    .hp-marker-label {
-        padding: 2px 6px;
-        font-size: 11px;
+    /* 👇 ここから重なり防止の調整を加えました */
+    .hp-height-marker {
+        width: 100% !important; /* 横幅いっぱいに広げて位置を安定 */
     }
+    .hp-marker-label {
+        font-size: 11px;
+        background-color: rgba(255, 255, 255, 0.85); /* 白背景をほんのり敷いて文字を読みやすく */
+        padding: 2px 6px;
+        border-radius: 3px;
+        position: relative;
+        left: -45px; /* 【重要】文字を左側（元のお家があった側）にグッと寄せて、右の木との間に隙間を作ります */
+        z-index: 10; /* 万が一、重なってもイラストより手前に表示 */
+    }
+    .hp-tree-column {
+        margin-left: 8px; /* 木と木の隙間をほんの少し詰めて、文字のためのスペースを確保 */
+    }
+    /* 👆 ここまで */
     .hp-tree-info {
         font-size: 12px;
     }
