@@ -21,6 +21,8 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-light);
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden; /* 横スクロールのブレを防止 */
 }
 
 p {
@@ -374,7 +376,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   7. 料金表・高さガイド
+   7. 料金表・高さガイド（PC表示ベース）
    ========================================================================== */
 .height-guide {
     text-align: center; 
@@ -509,6 +511,11 @@ nav a:hover {
     display: block;
 }
 
+.hp-tree-info p,
+.hp-tree-info span {
+    font-size: 1.2rem !important;
+}
+
 .hp-guide-note {
     text-align: center;
     margin-top: 25px;
@@ -517,11 +524,7 @@ nav a:hover {
     font-size: 1.2rem; /* 文字拡大 */
 }
 
-/* テーブルデザイン */
-.table-container { 
-    overflow-x: auto; 
-}
-
+/* パソコン用：標準テーブルデザイン */
 table { 
     width: 100%; 
     border-collapse: collapse; 
@@ -571,7 +574,7 @@ th {
 }
 
 /* ==========================================================================
-   8. 依頼の流れ & フッター
+   8. 依頼の流れ & フッター（PC・スマホ画面100%固定化修正）
    ========================================================================== */
 .flow-container { 
     display: grid; 
@@ -595,13 +598,25 @@ th {
     margin-bottom: 8px; 
 }
 
+/* 🌟フッター背景を画面いっぱい（100%幅）に広げるための修正 */
 footer { 
     background: #222222; 
     color: #999999; 
     text-align: center; 
-    padding: 50px 0 110px 0; /* 下部固定ボタンと被らないよう最初から広めに確保 */
-    margin-top: 50px; 
+    padding: 50px 20px 110px 20px; /* 左右にパディングを追加 */
+    margin-top: 80px; 
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
+
+.mobile-tel-bar {
+    display: none;
+}
+
 
 /* ==========================================================================
    9. スマホ・タブレット用 レスポンシブ調整（一括集約）
@@ -672,39 +687,36 @@ footer {
         font-size: 16px;
     }
 
-/* 実績・料金ガイド（不要な記述を削除し最適化） */
+    /* 実績・料金ガイド */
     .hp-height-visual-container {
         height: 410px; 
         padding: 0 10px 45px 75px;
-        position: relative; /* 👇 子要素（文字）の位置を正しく制御するための基準を設定 */
+        position: relative;
     }
     .hp-house-graphic {
         display: none;
     }
     
-    /* 👇 イラストより前に文字が確実に来るように設定 */
     .hp-height-marker {
         width: 100% !important;
-        position: absolute; /* 親要素に対して自由な位置に配置 */
+        position: absolute;
         left: 0;
-        z-index: 10; /* イラスト（z-index: 1）よりも前に出す */
+        z-index: 10;
     }
     .hp-marker-label {
         font-size: 11px;
-        background-color: rgba(255, 255, 255, 0.9); /* 白背景を敷いて文字の視認性をキープ */
+        background-color: rgba(255, 255, 255, 0.9);
         color: #333;
         padding: 2px 6px;
         border-radius: 3px;
         border: 1px solid #ccc;
-        
         position: absolute;
-        left: 15px; /* 左端から15pxの位置にしっかり固定 */
+        left: 15px;
     }
     .hp-tree-column {
         position: relative;
-        z-index: 1; /* 木のイラストは奥側に配置 */
+        z-index: 1;
     }
-    /* 👆 ここまで */
     
     .hp-tree-info {
         font-size: 12px;
@@ -712,6 +724,17 @@ footer {
     .hp-tree-info small {
         font-size: 10px;
     }
+
+    /* メッセージ強調設定 */
+    .message-strong {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        white-space: nowrap;
+    }
+    .message-strong br {
+        display: block;
+    }
+
     /* スマホ固定電話ボタン */
     .mobile-tel-bar {
         display: flex;
@@ -738,5 +761,114 @@ footer {
     .tel-text {
         font-size: 1rem;
         letter-spacing: 0.1em;
+    }
+
+    /* ==========================================================================
+       スマホ用：テーブル横スクロール＆幅の個別最適化（完全独立・上書き完全ブロック版）
+       ========================================================================== */
+    
+    /* 1. すべてのテーブル共通：横スクロールの基盤設定 */
+    .table-container,
+    .license-container,
+    .about-container,
+    .waste-container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 30px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+    .table-container table,
+    .license-container table,
+    .about-container table,
+    .waste-container table {
+        width: 100% !important;
+        table-layout: auto !important;
+        margin-top: 0 !important;
+    }
+    
+    /* PC用の大きな文字サイズ（1.2rem等）を完全に上書きし、全ての表の文字を均一にします */
+    .table-container th, .table-container td,
+    .license-container th, .license-container td,
+    .about-container th, .about-container td,
+    .waste-container th, .waste-container td,
+    .waste-container table tr td, .waste-container table tr th,
+    .waste-container table p {
+        padding: 12px 10px !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* ------------------------------------------
+       2. 料金表 専用（3列）の幅調整
+       ------------------------------------------ */
+    .table-container table {
+        min-width: 550px !important;
+    }
+
+    /* ------------------------------------------
+       3. 保有資格 専用（3列）の幅調整
+       ------------------------------------------ */
+    .license-container table {
+        min-width: 500px !important;
+    }
+    /* 1列目（左）：40% */
+    .license-container table tr td:nth-child(1) {
+        width: 40% !important;
+        font-weight: bold;
+        background-color: var(--soft-green);
+        color: var(--main-green);
+    }
+    /* 2列目（中）：30% */
+    .license-container table tr td:nth-child(2) {
+        width: 30% !important;
+        background-color: #ffffff;
+    }
+    /* 3列目（右）：30% */
+    .license-container table tr td:nth-child(3) {
+        width: 30% !important;
+        background-color: #ffffff;
+    }
+
+    /* ------------------------------------------
+       4. 会社案内 専用（2列）の幅調整
+       ------------------------------------------ */
+    .about-container table {
+        min-width: 500px !important;
+    }
+    /* 1列目（左の見出し）：28% に固定 */
+    .about-container table tr th {
+        width: 28% !important;
+        font-weight: bold;
+        background-color: var(--soft-green);
+        color: var(--main-green);
+    }
+    /* 2列目（右の内容）：72% の広々スペース */
+    .about-container table tr td {
+        width: 72% !important;
+        background-color: #ffffff;
+    }
+
+    /* ------------------------------------------
+       5. ゴミ処分費用 専用（2列）の幅調整
+       ------------------------------------------ */
+    .waste-container table {
+        min-width: 500px !important;
+    }
+    /* 1列目（左）：会社案内と完璧に揃えて 60% に */
+    .waste-container table tr td:nth-child(1),
+    .waste-container table tr th:nth-child(1) {
+        width: 60% !important;
+        font-weight: bold;
+        background-color: var(--soft-green);
+        color: var(--main-green);
+    }
+    /* 2列目（右）：残りの 40% に */
+    .waste-container table tr td:nth-child(2) {
+        width: 40% !important;
+        background-color: #ffffff;
     }
 }
