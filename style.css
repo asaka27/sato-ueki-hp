@@ -727,7 +727,7 @@ footer {
 
     /* メッセージ強調設定 */
     .message-strong {
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important;
         line-height: 1.6;
         white-space: nowrap;
     }
@@ -858,17 +858,17 @@ footer {
     .waste-container table {
         min-width: 500px !important;
     }
-    /* 1列目（左）：会社案内と完璧に揃えて 60% に */
+    /* 1列目（左）：会社案内と完璧に揃えて 50% に */
     .waste-container table tr td:nth-child(1),
     .waste-container table tr th:nth-child(1) {
-        width: 60% !important;
+        width: 50% !important;
         font-weight: bold;
         background-color: var(--soft-green);
         color: var(--main-green);
     }
-    /* 2列目（右）：残りの 40% に */
+    /* 2列目（右）：残りの 50% に */
     .waste-container table tr td:nth-child(2) {
-        width: 40% !important;
+        width: 50% !important;
         background-color: #ffffff;
     }
 }
